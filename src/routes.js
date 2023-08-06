@@ -1,28 +1,25 @@
-import {BrowserRouter,Routes,Route} from 'react-router-dom';
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
 
-import Home from './pages/Home';
-import Sobre from './pages/Sobre';
-import Contatos from './pages/Contatos';
-
-import Error from './pages/Error';
-
+import Home from './pages/Home'
+import Filme from './pages/Filme'
 import Header from './component/Header';
-import Produto from './pages/Produto';
 
-function RounterApp (){
+import Erro from './pages/Erro';
+import Favoritos from './pages/Favoritos';
+
+
+export default function RouterApp(){
     return(
         <BrowserRouter>
-            <Header />
+            <Header/>
             <Routes>
                 <Route path='/' element={ <Home/> }/>
-                <Route path='/Sobre' element={ <Sobre/> }/>
-                <Route path='/Contatos' element={ <Contatos/> }/>
-                <Route path='/Produto/:id' element={ <Produto/> }/>
+                <Route path='/filme/:id' element={ <Filme/> }/>
+                <Route path='/favoritos' element={ <Favoritos/> } />
 
-                <Route path='*' element={ <Error/> } />
+                
+                <Route path='*' element={ <Erro/>}/>
             </Routes>
         </BrowserRouter>
     )
 }
-
-export default RounterApp;
